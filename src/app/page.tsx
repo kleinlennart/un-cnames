@@ -3,19 +3,18 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
 export default function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [cnames, setCnames] = useState<string[]>([]);
 
     useEffect(() => {
-        fetch(`${basePath}/data/cnames.txt`)
+        fetch('/data/cnames.txt')
             .then(res => res.text())
             .then(text => {
                 const entries = text.split('\n').filter(line => line.trim()).sort();
                 setCnames(entries);
-            });
+            })
+            .catch(err => console.error('Failed to load cnames:', err));
     }, []);
 
     useEffect(() => {
