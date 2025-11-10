@@ -37,7 +37,7 @@ export default function Home() {
 
                     {/* GitHub Link */}
                     <a
-                        href="https://github.com/kleinlennart/un-website-boilerplate"
+                        href="https://github.com/kleinlennart/un-cnames"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-5 inline-flex items-center gap-2 text-un-blue hover:underline"

@@ -1,6 +1,6 @@
 # UN Website Boilerplate
 
-https://github.com/kleinlennart/un-website-boilerplate
+https://github.com/kleinlennart/un-cnames
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
