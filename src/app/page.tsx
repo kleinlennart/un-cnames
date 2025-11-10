@@ -41,11 +41,18 @@ export default function Home() {
                     alt="UN Logo"
                     width={100}
                     height={100}
-                    className="w-35 h-auto"
+                    className="w-[clamp(3rem,15vw,8.75rem)] h-auto"
                 />
             </div>
-            <div className="text-center">
-                <p className="text-6xl font-bold">{cnames[currentIndex]}</p>
+            <div className="text-center max-w-[calc(100vw-4rem)]">
+                <a
+                    href={`https://${cnames[currentIndex]}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold whitespace-nowrap inline-block hover:underline text-[clamp(1.5rem,8vw,3.75rem)]"
+                >
+                    {cnames[currentIndex]}
+                </a>
             </div>
         </div>
     );

@@ -11,8 +11,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-    title: "United Nations App",
-    description: "",
+    title: "United Nations Websites",
+    description: "Collection of Useful UN Websites",
 };
 
 export default function RootLayout({
