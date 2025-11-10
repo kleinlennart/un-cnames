@@ -12,7 +12,13 @@ export default function Home() {
             .then(res => res.text())
             .then(text => {
                 const entries = text.split('\n').filter(line => line.trim()).sort();
-                setCnames(entries);
+                // Remove un.org if it exists in the list to avoid duplication
+                const unOrgIndex = entries.indexOf('un.org');
+                if (unOrgIndex > -1) {
+                    entries.splice(unOrgIndex, 1);
+                }
+                // Always add un.org at the beginning
+                setCnames(['www.un.org', ...entries]);
             })
             .catch(err => console.error('Failed to load cnames:', err));
     }, []);
