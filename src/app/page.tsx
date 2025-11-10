@@ -3,15 +3,17 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [cnames, setCnames] = useState<string[]>([]);
 
     useEffect(() => {
-        fetch('/data/cnames.txt')
+        fetch(`${basePath}/data/cnames.txt`)
             .then(res => res.text())
             .then(text => {
-                const entries = text.split('\n').filter(line => line.trim());
+                const entries = text.split('\n').filter(line => line.trim()).sort();
                 setCnames(entries);
             });
     }, []);
@@ -27,8 +29,8 @@ export default function Home() {
     }, [cnames]);
 
     return (
-        <div className="flex min-h-screen items-center justify-center">
-            <div className="absolute top-4 left-4">
+        <div className="flex min-h-screen items-center justify-center px-8">
+            <div className="absolute top-8 left-8">
                 <Image
                     src="/images/UN_Logo_Stacked_Colour_English.svg"
                     alt="UN Logo"
